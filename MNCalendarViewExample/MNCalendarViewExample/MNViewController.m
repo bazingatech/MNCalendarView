@@ -29,18 +29,17 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.view.backgroundColor = UIColor.whiteColor;
-  
-  self.currentDate = [NSDate date];
-
-  self.calendarView = [[MNCalendarView alloc] initWithFrame:self.view.bounds];
-  self.calendarView.calendar = self.calendar;
-  self.calendarView.selectedDate = [NSDate date];
-  self.calendarView.delegate = self;
-  self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-  self.calendarView.backgroundColor = UIColor.whiteColor;
-  
-  [self.view addSubview:self.calendarView];
+    self.view.backgroundColor = UIColor.whiteColor;
+    
+    self.currentDate = [NSDate date];
+    
+    self.calendarView = [[MNCalendarView alloc] initWithFrame:CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height)];
+    self.calendarView.calendar = self.calendar;
+    self.calendarView.delegate = self;
+    self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    self.calendarView.backgroundColor = [UIColor colorWithRed:0.682 green:0.549 blue:0.761 alpha:1.0];
+    
+    [self.view addSubview:self.calendarView];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -61,7 +60,7 @@
 - (BOOL)calendarView:(MNCalendarView *)calendarView shouldSelectDate:(NSDate *)date {
   NSTimeInterval timeInterval = [date timeIntervalSinceDate:self.currentDate];
 
-  if (timeInterval > MN_WEEK && timeInterval < (MN_WEEK * 2)) {
+  if (timeInterval < - (MN_DAY)) {
     return NO;
   }
 

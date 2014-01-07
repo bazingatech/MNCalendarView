@@ -16,6 +16,8 @@ CG_EXTERN void MNContextDrawLine(CGContextRef c, CGPoint start, CGPoint end, CGC
 
 @property(nonatomic,assign,getter = isEnabled) BOOL enabled;
 
+@property(nonatomic, strong) UIFont *font;
+
 @property(nonatomic,strong) UIColor *separatorColor;
 
 @property(nonatomic,strong,readonly) UILabel *titleLabel;

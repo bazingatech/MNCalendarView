@@ -27,10 +27,11 @@
 @property(nonatomic,copy)   NSDate     *toDate;
 @property(nonatomic,copy)   NSDate     *selectedDate;
 
-@property(nonatomic,strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR; // default is the standard separator gray
+@property(nonatomic,strong) UIFont  *legendFont UI_APPEARANCE_SELECTOR;  // default is the standard bold system font
+@property(nonatomic,strong) UIFont  *contentFont UI_APPEARANCE_SELECTOR; // default is the standard system font
+@property(nonatomic,strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR; // default is the standard separator clear
 
 @property(nonatomic,strong) Class headerViewClass;
-@property(nonatomic,strong) Class weekdayCellClass;
 @property(nonatomic,strong) Class dayCellClass;
 
 - (void)reloadData;

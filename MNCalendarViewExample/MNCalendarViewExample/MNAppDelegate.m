@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
-  [[MNCalendarView appearance] setSeparatorColor:UIColor.blueColor];
+  [[MNCalendarView appearance] setLegendFont:[UIFont fontWithName:@"Helvetica-Bold" size:[UIFont systemFontSize]]];
 
   UITabBarController *controller = [[UITabBarController alloc] init];
   controller.viewControllers = @[

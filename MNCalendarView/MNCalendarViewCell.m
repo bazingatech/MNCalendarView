@@ -30,25 +30,44 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
 
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
-    self.backgroundColor = UIColor.whiteColor;
-    self.contentView.backgroundColor = UIColor.clearColor;
-    
-    self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.titleLabel.font = [UIFont systemFontOfSize:14.f];
-    self.titleLabel.textColor = [UIColor darkTextColor];
-    self.titleLabel.highlightedTextColor = [UIColor whiteColor];
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.userInteractionEnabled = NO;
-    self.titleLabel.backgroundColor = [UIColor clearColor];
-    
-    [self.contentView addSubview:self.titleLabel];
-    
-    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.23f green:0.61f blue:1.f alpha:1.f];
+      
+      _font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+      
+      self.backgroundColor = UIColor.whiteColor;
+      self.contentView.backgroundColor = UIColor.clearColor;
+      
+      self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
+      self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+      self.titleLabel.font = [self.font fontWithSize:14.0f];
+      self.titleLabel.textColor = [UIColor whiteColor];
+      self.titleLabel.highlightedTextColor = [UIColor colorWithRed:0.541 green:0.42 blue:0.616 alpha:1.0];
+      self.titleLabel.textAlignment = NSTextAlignmentCenter;
+      self.titleLabel.userInteractionEnabled = NO;
+      self.titleLabel.backgroundColor = [UIColor clearColor];
+      
+      [self.contentView addSubview:self.titleLabel];
+      
+      UIView *backgroundView = [[UIView alloc] initWithFrame:self.bounds];
+      
+      [backgroundView setBackgroundColor:[UIColor whiteColor]];
+      
+      // Apply mask to bound on image
+      backgroundView.layer.masksToBounds = YES;
+      
+      // Apply corner radius
+      backgroundView.layer.cornerRadius = backgroundView.frame.size.width / 2;
+      
+      self.selectedBackgroundView = backgroundView;
+      self.selectedBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
   }
   return self;
+}
+
+- (void) setFont:(UIFont *)font
+{
+    _font = font;
+    
+    _titleLabel.font = [_font fontWithSize:14.0f];
 }
 
 - (void)layoutSubviews {

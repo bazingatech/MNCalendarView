@@ -13,6 +13,7 @@ extern NSString *const MNCalendarHeaderViewIdentifier;
 @interface MNCalendarHeaderView : UICollectionReusableView
 
 @property(nonatomic,strong,readonly) UILabel *titleLabel;
+@property(nonatomic,strong) UIFont *font;
 @property(nonatomic,strong) NSDate *date;
 
 @end
