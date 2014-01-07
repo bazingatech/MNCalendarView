@@ -37,7 +37,6 @@
     self.calendarView.calendar = self.calendar;
     self.calendarView.delegate = self;
     self.calendarView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.calendarView.backgroundColor = [UIColor colorWithRed:0.682 green:0.549 blue:0.761 alpha:1.0];
     
     [self.view addSubview:self.calendarView];
 }
