@@ -43,7 +43,7 @@
     self.backgroundColor = [UIColor colorWithRed:0.682 green:0.549 blue:0.761 alpha:1.0];
     self.calendar        = NSCalendar.currentCalendar;
     self.fromDate        = [NSDate.date mn_beginningOfDay:self.calendar];
-    self.toDate          = [self.fromDate dateByAddingTimeInterval:MN_YEAR * 4];
+    self.toDate          = [self.fromDate dateByAddingTimeInterval:MN_YEAR * 5];
     self.daysInWeek      = 7;
     
     self.headerViewClass  = MNCalendarHeaderView.class;
