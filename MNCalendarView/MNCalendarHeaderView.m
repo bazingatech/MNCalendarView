@@ -10,7 +10,7 @@
 
 NSString *const MNCalendarHeaderViewIdentifier = @"MNCalendarHeaderViewIdentifier";
 static const CGFloat kSidePadding = 10.0f;
-static const CGFloat kSeparatorHeight = 1.0f;
+static const CGFloat kSeparatorHeight = 0.5f;
 
 @interface MNCalendarHeaderView()
 
@@ -23,7 +23,7 @@ static const CGFloat kSeparatorHeight = 1.0f;
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
       
-      _font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+      self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
       
       self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSidePadding, 0.0f, self.bounds.size.width - kSidePadding, self.bounds.size.height)];
       self.titleLabel.backgroundColor = UIColor.clearColor;
@@ -51,7 +51,7 @@ static const CGFloat kSeparatorHeight = 1.0f;
 {
     _font = font;
     
-    _titleLabel.font = [_font fontWithSize:18.0f];
+    _titleLabel.font = _font;
 }
 
 - (void)setDate:(NSDate *)date {

@@ -31,7 +31,7 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
 - (id)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
       
-      _font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+      self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
       
       self.backgroundColor = UIColor.whiteColor;
       self.contentView.backgroundColor = UIColor.clearColor;
@@ -67,7 +67,7 @@ NSString *const MNCalendarViewCellIdentifier = @"MNCalendarViewCellIdentifier";
 {
     _font = font;
     
-    _titleLabel.font = [_font fontWithSize:14.0f];
+    _titleLabel.font = _font;
 }
 
 - (void)layoutSubviews {

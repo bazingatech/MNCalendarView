@@ -50,8 +50,8 @@
     self.dayCellClass     = MNCalendarViewDayCell.class;
     
     
-    _legendFont     = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-    _contentFont    = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    _legendFont     = [UIFont systemFontOfSize:12.0f];
+    _contentFont    = [UIFont systemFontOfSize:18.0f];
     _separatorColor = [UIColor clearColor];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
